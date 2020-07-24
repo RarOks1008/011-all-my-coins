@@ -5,32 +5,32 @@
 
 ## Website Desing
 
-### *Register page*
-![Register Image](git-image/image1.png)
+### *Coin page*
+![Coin Image](git-image/image1.png)
 
-Register page.
+Coin page for showing all coins with filtering.
 
-### *Login page*
-![Login Image](git-image/image2.png)
+### *404 page*
+![404 Image](git-image/image2.png)
 
-Login page.
+404 Not Found page.
 
-### *Notes page*
-![Notes Image](git-image/image3.png)
+### *No coin found page*
+![No coin found Image](git-image/image3.png)
 
-Viewing all notes.
+No coin found page, when filters do not return any coin.
 
-### *No notes page*
-![No notes Image](git-image/image4.png)
+### *Add coin page*
+![Add coin Image](git-image/image4.png)
 
-Page when no notes could be found.
+Page to add a new coin.
 
-### *Edit note page*
-![Edit note Image](git-image/image5.png)
+### *Single coin page*
+![Single coin Image](git-image/image5.png)
 
-Page for editting a note.
+Page for showing a single coin.
 
-### *Add note page*
-![Add note Image](git-image/image6.png)
+### *Edit coin page*
+![Edit coin Image](git-image/image6.png)
 
-Page for adding a note
+Page for edditing coins.
