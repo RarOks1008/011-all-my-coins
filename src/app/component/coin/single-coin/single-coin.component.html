@@ -1,0 +1,45 @@
+<app-navigation [shouldShowFilterSort]="false"></app-navigation>
+<app-title-area></app-title-area>
+<div class="row my-row">
+    <ng-container *ngIf="coinItem">
+        <div class="col-md-6 my-column my-first-column">
+            <img [src]="'http://localhost/all-my-coins-php/coin-images/' + (coinItem.observe_pic || 'no_image.png')" [alt]="coinItem.observe_writing || 'No text inserted'" data-toggle="modal" data-target=".bd-example-modal-xl" (click)="enlargeImage(coinItem.observe_pic || 'no_image.png', coinItem.observe_writing || 'No text inserted')"/>
+            <span class="my-small-title small-title-margin">Observe: <span class="my-italic">{{coinItem.observe_writing || 'No text inserted'}}</span></span>
+            <img [src]="'http://localhost/all-my-coins-php/coin-images/' + (coinItem.reverse_pic || 'no_image.png')" [alt]="coinItem.reverse_writing || 'No text inserted'" data-toggle="modal" data-target=".bd-example-modal-xl" (click)="enlargeImage(coinItem.reverse_pic || 'no_image.png', coinItem.reverse_writing || 'No text inserted')"/>
+            <span class="my-small-title small-title-margin">Reverse: <span class="my-italic">{{coinItem.reverse_writing || 'No text inserted'}}</span></span>
+            <div class="my-horizontal-line"></div>
+            <span class="my-small-title">Demonetized: <span class="my-italic">{{coinItem.demonetized ? 'Yes' : 'No'}}</span></span>
+            <span class="my-small-title">Reference: <span class="my-italic">{{coinItem.reference || 'No reference inserted'}}</span></span>
+            <span class="my-small-title">Certified: <span class="my-italic">{{coinItem.certified || 'No'}}</span></span>
+            <div class="my-horizontal-line"></div>
+            <div class="my-button-holder">
+                <button type="button" class="btn btn-primary" (click)="editClick();">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="deleteClick();">Delete</button>
+            </div>
+        </div>
+        <div class="col-md-6 my-column my-second-column">
+            <h1>{{coinItem.value || 'Error'}} {{coinItem.year || 'Error'}}</h1>
+            <span class="my-small-title">Year: <span class="my-italic">{{coinItem.year | customyear}}</span></span>
+            <span class="my-small-title">Country: <span class="my-italic">{{coinItem.country || 'No country inserted'}}</span></span>
+            <span class="my-small-title">Emperor: <span class="my-italic">{{coinItem.emperor || 'No emperor inserted'}}</span></span>
+            <div class="my-horizontal-line"></div>
+            <span class="my-small-title">Weight: <span class="my-italic">{{coinItem.weight | customvalue:'g'}}</span></span>
+            <span class="my-small-title">Diameter: <span class="my-italic">{{coinItem.diameter | customvalue:'m'}}</span></span>
+            <span class="my-small-title">Thickness: <span class="my-italic">{{coinItem.thickness | customvalue:'m'}}</span></span>
+            <span class="my-small-title">Edge: <span class="my-italic">{{coinItem.edge || 'No edge selected'}}</span></span>
+            <span class="my-small-title">Shape: <span class="my-italic">{{coinItem.shape || 'No shape selected'}}</span></span>
+            <span class="my-small-title">Composition: <span class="my-italic">{{coinItem.composition || 'No composition selected'}}</span></span>
+            <span class="my-small-title">Grade: <span class="my-italic">{{coinItem.grade || 'No grade selected'}}</span></span>
+            <div class="my-horizontal-line" *ngIf="coinItem.comment"></div>
+            <span class="my-small-title" *ngIf="coinItem.comment">My comment:</span>
+            <div class="my-comment-area" *ngIf="coinItem.comment">{{coinItem.comment}}</div>
+        </div>
+        <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <img [src]="selectedImage.src ? 'http://localhost/all-my-coins-php/coin-images/' + selectedImage.src : ''" alt="{{selectedImage.alt}}" id="enlargedImageLoc"/>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

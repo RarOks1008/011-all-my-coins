@@ -1,0 +1,89 @@
+.my-row {
+  position: absolute;
+  top: 55px;
+  left: 200px;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 20px;
+  padding-right: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .my-100-div {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &.my-100-div-column {
+        flex-direction: column;
+
+        label {
+          margin: 0;
+          font-weight: bold;
+        }
+        input[type="text"], input[type="number"], input[type="file"], select {
+          width: 220px;
+          min-width: 220px;
+        }
+        textarea {
+          width: 90%;
+        }
+
+        .my-button-holder {
+          width: 90%;
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+
+      .my-part-holder {
+        width: 49%;
+
+        .my-sub-title {
+          font-size: 20px;
+          font-style: italic;
+        }
+
+        .my-item-holder {
+          width: 98%;
+          margin-left: 1%;
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          label {
+            margin: 0;
+            font-weight: bold;
+          }
+          input[type="text"], input[type="number"], input[type="file"], select {
+            width: 220px;
+            min-width: 220px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 930px) {
+.my-row form .my-100-div {
+  flex-direction: column;
+
+  .my-part-holder {
+    width: 98%;
+  }
+}
+}
+@media screen and (max-width: 500px) {
+  .my-row {
+    left: 100px;
+  }
+}

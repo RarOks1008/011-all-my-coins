@@ -1,0 +1,9 @@
+<app-navigation [shouldShowFilterSort]="true"></app-navigation>
+<app-search-coins></app-search-coins>
+<div class="row my-row">
+    <cdk-virtual-scroll-viewport itemSize="5" *ngIf="coins && coins.length > 0">
+        <app-preview-coin *cdkVirtualFor="let coinEl of coins" [coin]="coinEl">
+        </app-preview-coin>
+    </cdk-virtual-scroll-viewport>
+    <app-no-coin-show *ngIf="coins && coins.length == 0"></app-no-coin-show>
+</div>

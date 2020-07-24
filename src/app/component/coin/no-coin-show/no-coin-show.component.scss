@@ -1,0 +1,30 @@
+.my-bg-preview {
+    width: 60%;
+    margin-left: 20%;
+    padding: 10px;
+    margin-top: 30px;
+
+    h4.my-no-color-ash {
+        font-size: 24px;
+    }
+    h5.my-no-color-ash {
+        font-size: 18px;
+    }
+    .my-no-color-ash {
+        color: #aaa;
+        font-weight: bold;
+        margin: 10px 0;
+        cursor: default;
+    }
+    .my-no-color-black {
+        font-weight: bold;
+        font-size: 15px;
+        a {
+            color: #000;
+            &:hover {
+                color: #F9B500;
+                text-decoration: none;
+            }
+        }
+    }
+}

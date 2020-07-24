@@ -1,0 +1,14 @@
+<div class="bg-white my-bg-preview">
+    <div class="my-preview-images">
+        <img [src]="'http://localhost/all-my-coins-php/coin-images/' + (coin.observe_pic || 'no_image.png')" [alt]="coin.observe_writing || 'No text inserted'" />
+        <img [src]="'http://localhost/all-my-coins-php/coin-images/' + (coin.reverse_pic || 'no_image.png')" [alt]="coin.reverse_writing || 'No text inserted'" />
+    </div>
+    <div>
+        <h5 class="my-color-ash">{{coin.country || 'No country inserted'}}</h5>
+        <h4 class="my-color-black text-center"><a routerLink="/coin/{{coin.id}}">{{coin.value || 'Error'}} {{coin.year || 'Error'}}</a></h4>
+        <ul class="my-preview-list">
+            <li><span class="fas fa-star-half-alt"></span> {{coin.grade || 'No grade selected'}}</li>
+            <li><span class="fas fa-certificate"></span> {{coin.certified || 'No'}}</li>
+        </ul>
+    </div>
+</div>

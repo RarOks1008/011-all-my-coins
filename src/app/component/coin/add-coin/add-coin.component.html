@@ -1,0 +1,115 @@
+<app-navigation [shouldShowFilterSort]="false"></app-navigation>
+<app-title-area></app-title-area>
+<div class="row my-row">
+    <form [formGroup]="addCoinForm">
+        <div class="my-100-div">
+            <div class="my-part-holder">
+                <div class="my-item-holder">
+                    <label for="value"><span class="my-red-indicator">*</span>Value:</label>
+                    <input type="text" name="value" placeholder="1 Dinar" formControlName="coinValue" required/>
+                </div>
+                <div class="my-item-holder">
+                    <label for="year"><span class="my-red-indicator">*</span>Year (negative for BC, positive for AD):</label>
+                    <input type="number" name="year" placeholder="1925" formControlName="coinYear" required/>
+                </div>
+                <div class="my-item-holder">
+                    <label for="country"><span class="my-red-indicator">*</span>Country:</label>
+                    <input type="text" name="country" placeholder="Kingdom of Yugoslavia" formControlName="coinCountry" required/>
+                </div>
+                <div class="my-item-holder">
+                    <label for="emperor">Emperor:</label>
+                    <input type="text" name="emperor" placeholder="King Alexander 1" formControlName="coinEmperor" />
+                </div>
+                <div class="my-horizontal-line"></div>
+                <div class="my-item-holder">
+                    <label for="edge">Edge:</label>
+                    <select name="edge" formControlName="coinEdge">
+                        <option *ngFor="let edge of edges" [value]="edge.id">{{edge.name}}</option>
+                    </select>
+                </div>
+                <div class="my-item-holder">
+                    <label for="shape"><span class="my-red-indicator">*</span>Shape:</label>
+                    <select name="shape" formControlName="coinShape">
+                        <option *ngFor="let shape of shapes" [value]="shape.id">{{shape.name}}</option>
+                    </select>
+                </div>
+                <div class="my-item-holder">
+                    <label for="composition">Composition:</label>
+                    <select name="composition" formControlName="coinComposition">
+                        <option *ngFor="let composition of compositions" [value]="composition.id">{{composition.name}}</option>
+                    </select>
+                </div>
+                <div class="my-item-holder">
+                    <label for="grade"><span class="my-red-indicator">*</span>Grade:</label>
+                    <select name="grade" formControlName="coinGrade">
+                        <option *ngFor="let grade of grades" [value]="grade.id">{{grade.name}}</option>
+                    </select>
+                </div>
+                <div class="my-item-holder">
+                    <label for="demonetized">Demonetized:</label>
+                    <input type="checkbox" name="demonetized" formControlName="coinDemonetized" />
+                </div>
+                <div class="my-item-holder">
+                    <label for="reference">Reference:</label>
+                    <input type="text" name="reference" placeholder="123$21" formControlName="coinReference" />
+                </div>
+            </div>
+            <div class="my-part-holder">
+                <div>
+                    <div class="my-sub-title">Observe:</div>
+                    <div class="my-item-holder">
+                        <label for="observe_pic">Picture:</label>
+                        <input type="file" name="observe_pic" (change)="onObservePicChange($event)" accept="image/*" />
+                    </div>
+                    <div class="my-item-holder">
+                        <label for="observe_writing">Writing:</label>
+                        <input type="text" name="observe_writing" placeholder="Aleksandar 1. Kralj SHS" formControlName="coinObserveWriting" />
+                    </div>
+                    <div class="my-horizontal-line"></div>
+                    <div class="my-sub-title">Reverse:</div>
+                    <div class="my-item-holder">
+                        <label for="reverse_pic">Picture:</label>
+                        <input type="file" name="reverse_pic" (change)="onReversePicChange($event)" accept="image/*" />
+                    </div>
+                    <div class="my-item-holder">
+                        <label for="reverse_writing">Writing:</label>
+                        <input type="text" name="reverse_writing" placeholder="1 Dinar" formControlName="coinReverseWriting" />
+                    </div>
+                    <div class="my-horizontal-line"></div>
+                </div>
+                <div class="my-item-holder">
+                    <label for="weight">Weight (in g):</label>
+                    <input type="number" name="weight" placeholder="4.92" formControlName="coinWeight" />
+                </div>
+                <div class="my-item-holder">
+                    <label for="diameter">Diameter (in mm):</label>
+                    <input type="number" name="diameter" placeholder="23" formControlName="coinDiameter" />
+                </div>
+                <div class="my-item-holder">
+                    <label for="thickness">Thickness (in mm):</label>
+                    <input type="number" name="thickness" placeholder="1.8" formControlName="coinThickness" />
+                </div>
+            </div>
+        </div>
+        <div class="my-horizontal-line my-100-div"></div>
+        <div class="my-100-div my-100-div-column">
+            <div>
+                <label for="certified">Certified: &nbsp;</label>
+                <input type="checkbox" name="certified" formControlName="coinCertified" />
+            </div>
+            <div *ngIf="addCoinForm.value.coinCertified">
+                <label for="certification">Input certification: &nbsp;</label>
+                <input type="text" name="certification" placeholder="321%31" formControlName="coinCertification" />
+            </div>
+            <div>
+                <label for="comment">Comment:</label>
+                <textarea name="comment" cols="100" rows="5" formControlName="coinComment"></textarea>
+            </div>
+            <div class="my-button-holder">
+                <button type="button" class="btn btn-primary" (click)="coinFormSubmit()">Save</button>
+                <button type="button" class="btn btn-danger" (click)="coinFormDiscard()">Discard</button>
+            </div>
+        </div>
+    </form>
+    <span class="my-red-indicator">* Fields are mandatory!</span>
+</div>

@@ -1,0 +1,21 @@
+.my-row {
+    position: absolute;
+    top: 55px;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 20px;
+    padding-right: 0;
+
+    cdk-virtual-scroll-viewport, app-no-coin-show {
+        width: 100%;
+        height: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .my-row {
+      left: 100px;
+    }
+}

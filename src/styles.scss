@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    overflow: hidden;
+}
+
+.my-horizontal-line {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.my-red-indicator {
+    color: #ff0000;
+}

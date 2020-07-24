@@ -1,0 +1,26 @@
+.my-container {
+    right: 0;
+    left: 200px;
+    position: absolute;
+    top: 0;
+    height: 55px;
+    min-height: 55px;
+    box-shadow: 0 5px  0 rgba(58, 59, 69, 0.15);
+    z-index: -1;
+    display: flex;
+    justify-content: space-between;
+
+    .my-container-item {
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 55px;
+        min-height: 55px;
+        display: flex;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 500px) {
+    .my-container {
+      left: 100px;
+    }
+}

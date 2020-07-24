@@ -1,0 +1,26 @@
+<nav class="navbar-primary">
+    <ul class="navbar-primary-menu">
+        <a class="navbar-brand" routerLink="/">All My Coins</a>
+        <li class="nav-item"><a routerLink="/coin"><span class="glyphicon glyphicon-list-alt"></span><span class="nav-label">All Coins</span></a></li>
+        <li class="nav-item"><a routerLink="/coin/add"><span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Add Coin</span></a></li>
+        <ng-container *ngIf="shouldShowFilterSort">
+          <div class="area_heading">Filter Coins</div>
+          <li class="nav-item"><a (click)="certClick()"><span class="fas" [ngClass]="onlyCertified ? 'fa-check' : 'fa-times'"></span>&nbsp;<span class="nav-label">Only certified</span></a></li>
+          <li class="nav-item"><a (click)="pictClick()"><span class="fas" [ngClass]="hasPicture ? 'fa-check' : 'fa-times'"></span>&nbsp;<span class="nav-label">Has picture</span></a></li>
+          <li class="nav-item"><a (click)="demoClick()"><span class="fas" [ngClass]="notDemonetized ? 'fa-check' : 'fa-times'"></span>&nbsp;<span class="nav-label">Not demonetized</span></a></li>
+          <div class="area_heading">Sort Coins</div>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sort by
+            </a>
+            <div class="my-sort-show">Sort: {{orderValue == "order-up" ? "Order First" : (orderValue == "order-down" ? "Order Last" : (orderValue == "year-up" ? "Year First": "Year Last"))}}</div>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" (click)="orderValueChange('order-up')">Order <span class="fas fa-arrow-up"></span></a>
+              <a class="dropdown-item" (click)="orderValueChange('order-down')">Order <span class="fas fa-arrow-down"></span></a>
+              <a class="dropdown-item" (click)="orderValueChange('year-up')">Year <span class="fas fa-arrow-up"></span></a>
+              <a class="dropdown-item" (click)="orderValueChange('year-down')">Year <span class="fas fa-arrow-down"></span></a>
+            </div>
+          </li>
+        </ng-container>
+    </ul>
+</nav>

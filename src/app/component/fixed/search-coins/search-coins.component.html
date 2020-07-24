@@ -1,0 +1,6 @@
+<div class="my-container">
+    <div class="my-container-item">
+        <input type="text" class="form-control bg-light border-0 small" placeholder="Search coins..." aria-label="Search" [(ngModel)]="searchText" (keyup)="searchTextChange($event)" />
+        <button class="btn btn-primary" type="button" (click)="searchSubmit();"><i class="fas fa-search fa-sm"></i></button>
+    </div>
+</div>
