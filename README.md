@@ -1,27 +1,36 @@
 # AllMyCoins
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+*Angular, responsive, app made in my third year of studying.*
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Website Desing
 
-## Code scaffolding
+### *Register page*
+![Register Image](git-image/image1.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Register page.
 
-## Build
+### *Login page*
+![Login Image](git-image/image2.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Login page.
 
-## Running unit tests
+### *Notes page*
+![Notes Image](git-image/image3.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Viewing all notes.
 
-## Running end-to-end tests
+### *No notes page*
+![No notes Image](git-image/image4.png)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Page when no notes could be found.
 
-## Further help
+### *Edit note page*
+![Edit note Image](git-image/image5.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Page for editting a note.
+
+### *Add note page*
+![Add note Image](git-image/image6.png)
+
+Page for adding a note
